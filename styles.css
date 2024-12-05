@@ -3,26 +3,107 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-}
-
-header {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 header h1 {
     color: #333;
     font-size: 2rem;
+    margin-bottom: 30px;
 }
 
+/* Secciones */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Filas dentro de secciones */
+.indicator-row, .control-row, .valve-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Botones de Indicadores */
+.indicator, .control, .valve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de Indicadores */
+.indicator.alto {
+    background-color: red;
+}
+
+.indicator.funcional {
+    background-color: green;
+}
+
+.indicator.error {
+    background-color: brown;
+}
+
+.indicator.activa {
+    background-color: black;
+}
+
+/* Colores de Control */
+.control.motor {
+    background-color: gray;
+}
+
+.control.emergencia {
+    background-color: red;
+}
+
+/* Colores de Válvulas */
+.valve.v1 {
+    background-color: orange;
+}
+
+.valve.v2 {
+    background-color: blue;
+}
+
+.valve.v3 {
+    background-color: green;
+}
+
+.valve.v4 {
+    background-color: purple;
+}
+
+.valve.v4plus {
+    background-color: teal;
+}
+
+/* Formulario */
 .form-section {
     text-align: center;
     margin-bottom: 30px;
@@ -50,87 +131,15 @@ header h1 {
     background-color: #0056b3;
 }
 
-.button-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 30px;
-}
+/* Responsivo */
+@media (max-width: 768px) {
+    .indicator, .control, .valve {
+        width: 80px;
+        height: 80px;
+        font-size: 0.8rem;
+    }
 
-.panel-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.status-button, .control-button, .valve-button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50%;
-    font-size: 1rem;
-    cursor: pointer;
-    color: white;
-    transition: transform 0.2s;
-}
-
-.status-button:hover, .control-button:hover, .valve-button:hover {
-    transform: scale(1.1);
-}
-
-.status-button.alto {
-    background-color: red;
-}
-
-.status-button.funcional {
-    background-color: green;
-}
-
-.status-button.error {
-    background-color: brown;
-}
-
-.status-button.activa {
-    background-color: black;
-}
-
-.control-button.motor {
-    background-color: gray;
-}
-
-.control-button.emergencia {
-    background-color: red;
-}
-
-.valve-button.v1 {
-    background-color: orange;
-}
-
-.valve-button.v2 {
-    background-color: blue;
-}
-
-.valve-button.v3 {
-    background-color: green;
-}
-
-.valve-button.v4 {
-    background-color: purple;
-}
-
-.valve-button.v4plus {
-    background-color: teal;
-}
-
-.iframe-section {
-    text-align: center;
-    margin-top: 30px;
-}
-
-iframe {
-    width: 100%;
-    height: 600px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    .form-section input {
+        width: 200px;
+    }
 }
