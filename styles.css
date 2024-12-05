@@ -1,0 +1,136 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.form-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-section input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-section button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background-color: #0056b3;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.panel-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.status-button, .control-button, .valve-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.status-button:hover, .control-button:hover, .valve-button:hover {
+    transform: scale(1.1);
+}
+
+.status-button.alto {
+    background-color: red;
+}
+
+.status-button.funcional {
+    background-color: green;
+}
+
+.status-button.error {
+    background-color: brown;
+}
+
+.status-button.activa {
+    background-color: black;
+}
+
+.control-button.motor {
+    background-color: gray;
+}
+
+.control-button.emergencia {
+    background-color: red;
+}
+
+.valve-button.v1 {
+    background-color: orange;
+}
+
+.valve-button.v2 {
+    background-color: blue;
+}
+
+.valve-button.v3 {
+    background-color: green;
+}
+
+.valve-button.v4 {
+    background-color: purple;
+}
+
+.valve-button.v4plus {
+    background-color: teal;
+}
+
+.iframe-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
