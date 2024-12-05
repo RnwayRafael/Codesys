@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codesys</title>
+</head>
+<body>
+    <h1>Codesys Web</h1>
+    <p>Ingresa la dirección IP de tu Raspberry Pi para conectarte al servicio Codesys:</p>
+    <form id="ipForm">
+        <label for="ipAddress">Dirección IP:</label>
+        <input type="text" id="ipAddress" placeholder="Por ejemplo: 192.168.0.13" required>
+        <button type="submit">Conectar</button>
+    </form>
+    <hr>
+    <h2>Vista Previa:</h2>
+    <iframe id="webvisuFrame" style="width: 100%; height: 600px; border: 1px solid #ccc;" src=""></iframe>
+    
+    <script>
+        document.getElementById("ipForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const ipAddress = document.getElementById("ipAddress").value.trim();
+            if (ipAddress) {
+                const fullUrl = `http://${ipAddress}:8080/webvisu.htm`;
+                document.getElementById("webvisuFrame").src = fullUrl;
+            } else {
+                alert("Por favor, ingresa una dirección IP válida.");
+            }
+        });
+    </script>
+</body>
+</html>
