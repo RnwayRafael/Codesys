@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codesys</title>
+    <title>Codesys Web Panel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Codesys Web</h1>
-    <p>Ingresa la dirección IP de tu Raspberry Pi para conectarte al servicio Codesys:</p>
-    <form id="ipForm">
-        <label for="ipAddress">Dirección IP:</label>
-        <input type="text" id="ipAddress" placeholder="Por ejemplo: 192.168.0.13" required>
-        <button type="submit">Conectar</button>
-    </form>
-    <hr>
-    <h2>Vista Previa:</h2>
-    <iframe id="webvisuFrame" style="width: 100%; height: 600px; border: 1px solid #ccc;" src=""></iframe>
-    
+    <div class="container">
+        <header>
+            <h1>Codesys Web Panel</h1>
+        </header>
+
+        <section class="form-section">
+            <p>Ingresa la dirección IP de tu Raspberry Pi para conectarte al servicio Codesys:</p>
+            <form id="ipForm">
+                <label for="ipAddress">Dirección IP:</label>
+                <input type="text" id="ipAddress" placeholder="Por ejemplo: 192.168.0.13" required>
+                <button type="submit">Conectar</button>
+            </form>
+        </section>
+
+        <section class="button-panel">
+            <div class="panel-row">
+                <button class="status-button alto">Alto</button>
+                <button class="status-button funcional">Funcional</button>
+                <button class="status-button error">Error</button>
+                <button class="status-button activa">V4 Activa</button>
+            </div>
+
+            <div class="panel-row">
+                <button class="control-button motor">Activador Motor</button>
+                <button class="control-button emergencia">Botón de Emergencia</button>
+            </div>
+
+            <div class="panel-row">
+                <button class="valve-button v1">V1</button>
+                <button class="valve-button v2">V2</button>
+                <button class="valve-button v3">V3</button>
+                <button class="valve-button v4">V4</button>
+                <button class="valve-button v4plus">+V4</button>
+            </div>
+        </section>
+
+        <section class="iframe-section">
+            <h2>Vista Previa:</h2>
+            <iframe id="webvisuFrame" src="" title="Vista Codesys"></iframe>
+        </section>
+    </div>
+
     <script>
         document.getElementById("ipForm").addEventListener("submit", function(event) {
             event.preventDefault();
