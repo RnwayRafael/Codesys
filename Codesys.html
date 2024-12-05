@@ -3,64 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codesys Panel</title>
+    <title>Codesys</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Codesys Web Panel</h1>
+            <h1>Codesys Web</h1>
         </header>
-
-        <!-- Sección para ingresar la IP -->
+        
+        <!-- Formulario para ingresar la IP -->
         <section class="form-section">
-            <p>Ingresa la dirección IP de tu Raspberry Pi:</p>
+            <p>Ingresa la dirección IP de tu Raspberry Pi para conectarte al servicio Codesys:</p>
             <form id="ipForm">
                 <label for="ipAddress">Dirección IP:</label>
-                <input type="text" id="ipAddress" value="192.168.0.13" required>
+                <input type="text" id="ipAddress" placeholder="Por ejemplo: 192.168.0.13" required>
                 <button type="submit">Conectar</button>
             </form>
         </section>
-
-        <!-- División 1: Indicadores de Estado -->
-        <section class="indicator-section">
-            <h2>Indicadores de Estado</h2>
-            <div class="indicator-row">
-                <div class="indicator alto">Alto</div>
-                <div class="indicator funcional">Funcional</div>
-                <div class="indicator error">Error</div>
-                <div class="indicator activa">V4 Activa</div>
-            </div>
-        </section>
-
-        <!-- División 2: Control de Motor -->
-        <section class="control-section">
-            <h2>Control del Motor</h2>
-            <div class="control-row">
-                <div class="control motor">Activador Motor</div>
-                <div class="control emergencia">Botón de Emergencia</div>
-            </div>
-        </section>
-
-        <!-- División 3: Indicadores de Estado de Válvulas -->
-        <section class="valve-section">
-            <h2>Indicador de Estado de Válvulas</h2>
-            <div class="valve-row">
-                <div class="valve v1">V1</div>
-                <div class="valve v2">V2</div>
-                <div class="valve v3">V3</div>
-                <div class="valve v4">V4</div>
-                <div class="valve v4plus">+V4</div>
-            </div>
-        </section>
-
-        <!-- Iframe para la vista previa -->
+        
+        <hr>
+        
+        <!-- Vista previa -->
         <section class="iframe-section">
-            <h2>Vista Previa:</h2>
+            <h2>Tablero de Control:</h2>
             <iframe id="webvisuFrame" src="" title="Vista Codesys"></iframe>
         </section>
     </div>
-
+    
     <script>
         document.getElementById("ipForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -69,7 +39,7 @@
                 const fullUrl = `http://${ipAddress}:8080/webvisu.htm`;
                 document.getElementById("webvisuFrame").src = fullUrl;
             } else {
-                alert("Por favor, ingresa una dirección IP válida.");
+                alert("Por favor, ingresa una dirección IP.");
             }
         });
     </script>
